@@ -330,30 +330,6 @@
       .form-grid{grid-template-columns:1fr;}
       .hero-content{padding:4rem 1rem 3rem;}
     }
-
-    /* RETELL WIDGET */
-    .retell-fab {
-      position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
-      display: flex; flex-direction: column; align-items: center; gap: .5rem;
-    }
-    .retell-btn {
-      width: 64px; height: 64px; border-radius: 50%;
-      background: var(--amber); border: none; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 6px 24px rgba(217,119,6,.5);
-      transition: transform .2s, box-shadow .2s, background .2s;
-      position: relative;
-    }
-    .retell-btn:hover { transform: scale(1.08); box-shadow: 0 10px 32px rgba(217,119,6,.6); }
-    .retell-btn.retell-active { background: #dc2626; box-shadow: 0 6px 24px rgba(220,38,38,.5); }
-    .retell-btn.retell-active:hover { box-shadow: 0 10px 32px rgba(220,38,38,.6); }
-    .retell-btn svg { width: 28px; height: 28px; color: #fff; }
-    .retell-pulse {
-      position: absolute; inset: -4px; border-radius: 50%;
-      background: rgba(217,119,6,.3); animation: rpulse 2s ease-out infinite;
-    }
-    .retell-active .retell-pulse { background: rgba(220,38,38,.3); }
-    @keyframes rpulse { 0%{transform:scale(1);opacity:1} 100%{transform:scale(1.6);opacity:0} }
     .retell-tooltip {
       background: var(--ink); color: #fff; font-size: .72rem; font-weight: 700;
       letter-spacing: .06em; padding: .3rem .75rem; border-radius: 20px;
@@ -1032,16 +1008,12 @@ function handleForm(e) {
 }
 </script>
 
-<!-- RETELL AI WIDGET -->
-<div class="retell-fab">
-  <div class="retell-tooltip" id="retell-label">Talk to Us</div>
-  <button class="retell-btn" id="retell-btn" aria-label="Talk to our AI assistant">
-    <div class="retell-pulse"></div>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-    </svg>
-  </button>
-</div>
+<!-- RETELL AI OFFICIAL WIDGET -->
+<script src="https://cdn.retellai.com/embed.js" defer></script>
+<retell-widget 
+  agent-id="agent_21468860a0608bc9d7e1ffbfc5"
+  api-key="public_key_082411904b914a2bb10ab">
+</retell-widget>
 
 </body>
 </html>
